@@ -1,1 +1,24 @@
+"Create a Team and Heroes!"
 
+<form action = '/teams'  method = 'POST'>
+  <p>
+    <label>Name: </label>
+    <input type = 'text' name = 'team[name]'>
+  </p>
+  <p>
+    <label>Motto: </label>
+    <input type = 'text' name = 'team[motto]'>
+  </p>
+  <% 1.upto(3) do |i| %>
+    <p>
+      <h2>Hero <%=i%></h2>
+      <label>Hero's Name: </label>
+      <input type = 'text' name = 'team[members][super<%=i%>][name]'><br>
+      <label>Hero's Power: </label>
+      <input type = 'text' name = 'team[members][super<%=i%>][power]'><br>
+      <label>Hero's Biography: </label>
+      <input type = 'text' name = 'team[members][super<%=i%>][bio]'>
+    </p>
+  <% end %>
+  <input type = 'submit' value = 'Submit'>
+</form>

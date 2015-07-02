@@ -1,3 +1,11 @@
+<h1>Flatiron</h1>
+<h2>Team Name: <%=@team[:name]%></h2>
+<h2>Team Motto: <%=@team[:motto]%></h2>
 
-
-
+<% @team[:members].each do |member| %>
+  <p>
+    <h3>Hero Name: <%=member[0]%></h3>
+    Hero Power: <%=member[1]%><br>
+    Hero Biography: <%=member[2]%><br>
+  </p>
+<% end %>
